@@ -1,14 +1,10 @@
 fn main() {
-    // let outcome = Result::Success(43.78);
-    // print_result(outcome);
-    // let outcome = Result::Failure(102, 'Y');
-    // print_result(outcome);
-    // let outcome = Result::Uncertainty;
-    // print_result(outcome); // This line will print nothing
-
-    print!("\n ---- New Function ----- ");
-    hare_krishna();
-    
+    let outcome = Result::Success(43.78);
+    print_result(outcome);
+    let outcome = Result::Failure(102, 'Y');
+    print_result(outcome);
+    let outcome = Result::Uncertainty;
+    print_result(outcome); // This line will print nothing
 }
 
 enum Result {
@@ -25,9 +21,4 @@ fn print_result(outcome: Result) {
                     error_code, module),
        Result::Uncertainty => {},
     }
-}
-
-fn hare_krishna()  {
-    // println!("Hare Krisna");
-    println!("Jai Shri Krishna")
 }
