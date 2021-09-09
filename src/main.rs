@@ -1,3 +1,8 @@
+// Started a new branch in rust practice repo
+// started workin on rust struct data type
+// it seems like interface of typescript
+
+
 fn main() {
     
 struct SomeData {
