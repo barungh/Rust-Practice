@@ -1,63 +1,33 @@
-// Started a new branch in rust practice repo
-// started workin on rust struct data type
-// it seems like interface of typescript
+// Lexical conventions adopted by 
+// Rust developers
 
+// it is so entrenched that
+// even compiler emits warning for them
 
-fn main() {
-    
-struct SomeData {
-    i: i32,
-    f: f32,
-    c: char,
-    five_bytes: [u8; 5],
+fn main()  {
+
+const MAXIMUM_POWER: u16 = 600;
+enum VehicleKind {
+    Motorcycle,
+    Car,
+
+    Truck,
 }
 
-let data = SomeData {
-    i: 10_000_000,
-    f: 134.23,
-    c: 'T',
-    five_bytes: [9, 0, 3, 43, 130],
+struct VehicleData {
+    kind: VehicleKind,
+    registration_year: u16,
+    registration_month: u8,
+    power: u16,
+}
+let vehicle = VehicleData {
+    kind: VehicleKind::Car,
+    registration_year: 2003,
+    registration_month: 11,
+    power: 720,
 };
-print!("{} {} {} {}", data.five_bytes[3], data.i,
-       data.f, data.c);
 
-print!("\n");
-another_func();
-print!("\n");
-other_func();
+if vehicle.power > MAXIMUM_POWER {
+    println!("Too powerful");
+};
 }
-
-// mutabale struct
-fn another_func ()  {
-    struct SomeData {
-        integer: i32,
-        fractional: f32,
-    }
-    let mut data = SomeData {
-        integer: 10,
-        fractional: 183.19,
-    };
-    data.fractional = 8.2;
-    print!("{}, {}", data.fractional, data.integer);
-}
-
-// tuple struct
-
-fn other_func ()  {
-   struct SomeData (
-       i32,
-       f32,
-       char,
-       [u8; 5],
-       ); 
-   let data = SomeData (
-       10_000_000,
-       183.19,
-       'Q',
-       [9, 0, 250, 60, 200],
-       );
-   print!("{}, {}, {}, {}", 
-          data.2, data.0, data.1, data.3[2]);
-}
-
-
