@@ -20,7 +20,44 @@ let data = SomeData {
 };
 print!("{} {} {} {}", data.five_bytes[3], data.i,
        data.f, data.c);
+
+print!("\n");
+another_func();
+print!("\n");
+other_func();
 }
 
+// mutabale struct
+fn another_func ()  {
+    struct SomeData {
+        integer: i32,
+        fractional: f32,
+    }
+    let mut data = SomeData {
+        integer: 10,
+        fractional: 183.19,
+    };
+    data.fractional = 8.2;
+    print!("{}, {}", data.fractional, data.integer);
+}
+
+// tuple struct
+
+fn other_func ()  {
+   struct SomeData (
+       i32,
+       f32,
+       char,
+       [u8; 5],
+       ); 
+   let data = SomeData (
+       10_000_000,
+       183.19,
+       'Q',
+       [9, 0, 250, 60, 200],
+       );
+   print!("{}, {}, {}, {}", 
+          data.2, data.0, data.1, data.3[2]);
+}
 
 
