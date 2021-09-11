@@ -1,35 +1,21 @@
 fn main() {
-    for n in -2..5 {
-        println!("{} is {}.", n, match n {
-            0 => "zero",
-            1 => "one",
-            _ if n < 0 => "negative", // All other cases 'if' lower than 0
-            _ => "positive", // and all other cases, here all positive numbers
-        });
-    }
+    print!("{:?}", divide(140, 9));
+
+    let mut arr = [5, -4, 9, 0, -7, -1, 3, 5, 3, 1];
+    arr = double_negatives(arr); // value of returned array is assigned to arr variable
+    print!(" {:?} ", arr);
 }
 
-// fn main() {
-//     let outcome = Result::Success(43.78);
-//     print_result(outcome);
-//     let outcome = Result::Failure(102, 'Y');
-//     print_result(outcome);
-//     let outcome = Result::Uncertainty;
-//     print_result(outcome); // This line will print nothing
-// }
-// 
-// enum Result {
-//    Success(f64),
-//    Failure(u16, char),
-//    Uncertainty,
-// }
-// 
-// fn print_result(outcome: Result) {
-//     match outcome {
-//        Result::Success(_) => println!("OK"), // _ underscore sign , lets skip variable
-//        Result::Failure(error_code, module) =>
-//            println!("Error no. {} in module {}", 
-//                     error_code, module),
-//        Result::Uncertainty => {},
-//     }
-// }
+    fn divide(dividend: i32, divisor: i32) -> (i32, i32) {
+        (dividend / divisor, dividend % divisor)
+    }
+// dividend / divisor ->  gives us quotient 
+// dividend % divisor -> this gives us remainder
+
+fn double_negatives(mut a: [i32; 10]) -> [i32; 10] {
+    for i in 0..10 {
+        if a[i] < 0 { a[i] *= 2; }
+    }
+    a // it returns the modified array
+}
+
