@@ -1,3 +1,8 @@
+// How we can guard the match micro ?
+//  In this function , on third instnce of match
+//  _ if n < 0 , all rest cases will be matched 
+//  but instantly it is guarded by 'if' condition
+
 fn main() {
     for n in -2..5 {
         println!("{} is {}.", n, match n {
@@ -9,27 +14,3 @@ fn main() {
     }
 }
 
-// fn main() {
-//     let outcome = Result::Success(43.78);
-//     print_result(outcome);
-//     let outcome = Result::Failure(102, 'Y');
-//     print_result(outcome);
-//     let outcome = Result::Uncertainty;
-//     print_result(outcome); // This line will print nothing
-// }
-// 
-// enum Result {
-//    Success(f64),
-//    Failure(u16, char),
-//    Uncertainty,
-// }
-// 
-// fn print_result(outcome: Result) {
-//     match outcome {
-//        Result::Success(_) => println!("OK"), // _ underscore sign , lets skip variable
-//        Result::Failure(error_code, module) =>
-//            println!("Error no. {} in module {}", 
-//                     error_code, module),
-//        Result::Uncertainty => {},
-//     }
-// }
