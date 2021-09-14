@@ -1,3 +1,7 @@
+// In Rust, it is not necessary to write 'return'
+// last expression/statement is return by function
+// return can be used to return prematurely
+
 fn main() {
     print!("{:?}", divide(140, 9));
 
