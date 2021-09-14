@@ -1,6 +1,8 @@
 // In Rust, it is not necessary to write 'return'
 // last expression/statement is return by function
 // return can be used to return prematurely
+// *****************************************
+// see README of this branch
 
 fn main() {
     print!("{:?}", divide(140, 9));
@@ -22,4 +24,5 @@ fn double_negatives(mut a: [i32; 10]) -> [i32; 10] {
     }
     a // it returns the modified array
 }
+
 
