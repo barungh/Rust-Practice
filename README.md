@@ -45,3 +45,8 @@ fn double_negatives(mut a: [i32; 10]) -> [i32; 10] {
     a // it returns the modified array
 }
 ```
+
+##### Rust error message can be helpful to determine expresson type  
+
+![Expression Type](./scrot_2021-09-14.png)
+
