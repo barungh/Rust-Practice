@@ -1,23 +1,36 @@
 // Passing arguments as Reference
 
 fn main()  {
-   let mut arr = [ 3, -5, 7, 1, -7, -1, 3, 4, 4, 0];
-   
-   // it returns [3, -10, 7, 1, -14, -2, 3, 4, 4, 0]
-   
-   double_negatives(&mut arr);
-   print!("{:?}", arr);
+    let a = 15;
+    let ref_a = &a;
+    print!("{} {} {}", a, *ref_a, ref_a);
+    ref_mut();
 }
 
-// fn double_negatives(a: &mut [i32; 10]) {
-//     for i in 0..10 {
-//         if (*a)[i] < 0 { (*a)[i] *= 2; }
-//     }
-// }
+// mutability of References
+fn ref_mut() {
+    let mut a: i32 = 10;
+    let mut b: i32 = 20;
+    let mut p: &mut i32 = &mut a; // line 3
 
-
-fn double_negatives(a: &mut [i32; 10]) {
-    for i in 0..10 {
-        if a[i] < 0 { a[i] *= 2; }
-    }
+    print!("{} ", *p);
+    *p += 1; // line 5
+    print!("{} ", *p);
+    p = &mut b;
+    print!("{} ", *p);
+    *p += 1; // line 9
+    print!("{} ", *p);
 }
+
+// at line 5 and line 9
+// objects referred to by p 
+// are increamented 
+// that is they are readable 
+// and writable
+// and for this 
+// if *p is mutable
+// therefore in line 3
+// type of p is not just i32 
+// instead, &mut i32
+
+
