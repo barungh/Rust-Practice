@@ -11,9 +11,10 @@ fn main() {
     arr = double_negatives(arr); // value of returned array is assigned to arr variable
     print!(" {:?} ", arr);
     
-    print!("\n");
+    println!("Hare Krishna");
 
     print!("{} {}", round_off(7.), round_off(3.));
+
     
     print!("\n");
 
